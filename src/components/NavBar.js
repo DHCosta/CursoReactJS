@@ -6,7 +6,7 @@ import CartWidget from './CartWidget';
 import NavBarMenu from './NavBarMenu';
 
 export default function NavBar(){
-    //https://javascript.works-hub.com/learn/how-to-create-a-responsive-navbar-using-material-ui-and-react-router-f9a01
+    
     const navItems = ['Home', 'About', 'Contact'];
 
     return(
