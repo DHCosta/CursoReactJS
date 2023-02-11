@@ -1,17 +1,21 @@
-import { Container } from '@mui/material'
 import React from 'react'
 import Item from './Item'
+import { Grid } from '@mui/material'
 
 const ItemList = ({cursos}) => {
 
   return (
-    <Container>
+    <>
         {
             cursos.map((curso) => {
-                return <Item key={curso.nombre} curso={curso}/>
+                return (
+                  <Grid key={curso.nombre} item xs={4}>
+                    <Item curso={curso}/>
+                  </Grid>
+                )                
             })
         }
-    </Container>
+    </>
   )
 }
 
