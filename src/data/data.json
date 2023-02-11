@@ -3,7 +3,7 @@
         "nombre": "Pequeña Historia del Arte Ilustrada", 
         "detalle": "Nos vamos de paseo por el mundo del arte y sus maravillas: desde las pirámides de Giza, hasta la escuela de la Bauhaus...", 
         "precio": 4000,
-        "imagen": "./public/media/historiailus.png" 
+        "imagen": "/media/historiailus.png" 
     },
     {
         "nombre": "Historia de una Artista", 

@@ -10,7 +10,7 @@ const ItemListContainer = ({greeting}) => {
 
     const getCursos = async () => {
         try{
-            const res = await fetch('https://raw.githubusercontent.com/DHCosta/CursoReactJS/PreEntrega2/src/data/data.json');
+            const res = await fetch('https://raw.githubusercontent.com/DHCosta/CursoReactJS/73ba4e656fb27f5f3eb01911dd9c691a8366a69d/src/data/data.json');
             const data = await res.json();
             setCursos(data);
         }
