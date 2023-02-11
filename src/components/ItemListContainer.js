@@ -8,18 +8,18 @@ const ItemListContainer = ({greeting}) => {
     const [cursos, setCursos] = useState([]);
     const [error, setError] = useState(false);
 
-    useEffect(() => {
-        const getCursos = async () => {
-            try{
-                const res = await fetch('http://localhost:3000/CursoReactJS/data/data.json');
-                const data = await res.json();
-                setCursos(data.data);
-            }
-            catch{
-                setError(true);
-            }
+    const getCursos = async () => {
+        try{
+            const res = await fetch('https://api.storerestapi.com/products');
+            const data = await res.json();
+            setCursos(data.data);
         }
+        catch{
+            setError(true);
+        }
+    }
 
+    useEffect(() => {
         getCursos();
     }, []);
     
