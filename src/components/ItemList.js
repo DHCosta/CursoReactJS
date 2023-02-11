@@ -8,7 +8,7 @@ const ItemList = ({cursos}) => {
     <Container>
         {
             cursos.map((curso) => {
-                return <Item key={curso.id} curso={curso}/>
+                return <Item key={curso.nombre} curso={curso}/>
             })
         }
     </Container>

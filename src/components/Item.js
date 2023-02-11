@@ -3,7 +3,7 @@ import React from 'react'
 
 const Item = ({curso}) => {
   return (
-    <Container flexed>
+    <Container>
         <h3>{curso.nombre}</h3>
         <p>{curso.detalle}</p>
         <p>${curso.precio}</p>
