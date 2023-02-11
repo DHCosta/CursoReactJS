@@ -4,10 +4,13 @@ import React from 'react'
 const Item = ({curso}) => {
   return (
     <Container flexed>
-        <h3>{curso.title}</h3>
-        <p>${curso.price}</p>
+        <h3>{curso.nombre}</h3>
+        <p>{curso.detalle}</p>
+        <p>${curso.precio}</p>
+        <p>{curso.imagen}</p>
     </Container>
   )
 }
 
 export default Item
+

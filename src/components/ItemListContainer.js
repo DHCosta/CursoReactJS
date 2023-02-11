@@ -10,9 +10,9 @@ const ItemListContainer = ({greeting}) => {
 
     const getCursos = async () => {
         try{
-            const res = await fetch('https://api.storerestapi.com/products');
+            const res = await fetch('https://raw.githubusercontent.com/DHCosta/CursoReactJS/PreEntrega2/src/data/data.json');
             const data = await res.json();
-            setCursos(data.data);
+            setCursos(data);
         }
         catch{
             setError(true);
