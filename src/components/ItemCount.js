@@ -24,12 +24,12 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
   return (
     <Paper sx={{ display: 'inline-flex', justifyContent: 'space-between', alignItems: 'center', paddingX:2.5 }}>
-      <IconButton aria-label="add" onClick={addCont}>
-          <AddIcon />
-      </IconButton>
-      <Typography px={1}>{contador}</Typography>
       <IconButton aria-label="delete" onClick={remCont}>
           <RemoveIcon />
+      </IconButton>
+      <Typography px={1}>{contador}</Typography>
+      <IconButton aria-label="add" onClick={addCont}>
+          <AddIcon />
       </IconButton>
     </Paper>
   )
