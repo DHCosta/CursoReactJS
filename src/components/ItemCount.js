@@ -23,7 +23,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
   };*/
 
   return (
-    <Paper sx={{ display: 'inline-flex', justifyContent: 'space-between', alignItems: 'center', paddingX:2.5 }}>
+    <Paper variant="outlined" square sx={{ display: 'inline-flex', justifyContent: 'space-between', alignItems: 'center', paddingX:2.5 }}>
       <IconButton aria-label="delete" onClick={remCont}>
           <RemoveIcon />
       </IconButton>

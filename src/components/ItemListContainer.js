@@ -25,8 +25,7 @@ const ItemListContainer = ({greeting}) => {
 
     return (
         <>
-            <Typography variant="h5" mt={15} pl={3}>{greeting}</Typography>
-
+            <Typography variant="h5" mt={15} pl={3} display={'flex'} justifyContent={'center'}>{greeting}</Typography>
 
             {!error ? (
                 <>
