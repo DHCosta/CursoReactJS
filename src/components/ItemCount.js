@@ -4,6 +4,7 @@ import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import { Box } from '@mui/material';
+import Paper from '@mui/material/Paper';
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
@@ -22,15 +23,15 @@ const ItemCount = ({stock, initial, onAdd}) => {
   };*/
 
   return (
-    <Box sx={{ display: 'inline-flex', justifyContent: 'space-between', alignItems: 'center', paddingX:2.5, border: '1px solid grey' }}>
-        <IconButton aria-label="add" onClick={addCont}>
-            <AddIcon />
-        </IconButton>
-        <Typography px={1}>{contador}</Typography>
-        <IconButton aria-label="delete" onClick={remCont}>
-            <RemoveIcon />
-        </IconButton>
-    </Box>
+    <Paper sx={{ display: 'inline-flex', justifyContent: 'space-between', alignItems: 'center', paddingX:2.5 }}>
+      <IconButton aria-label="add" onClick={addCont}>
+          <AddIcon />
+      </IconButton>
+      <Typography px={1}>{contador}</Typography>
+      <IconButton aria-label="delete" onClick={remCont}>
+          <RemoveIcon />
+      </IconButton>
+    </Paper>
   )
 }
 
