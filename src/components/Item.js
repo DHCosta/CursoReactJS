@@ -6,29 +6,32 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ItemCount from './ItemCount';
-import Container from '@mui/material/Container';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 const Item = ({curso}) => {
+
+  const {nombre, detalle, imagen} = curso
+
   return (
     <Card>
       <CardMedia
         component="img"
-        alt={curso.nombre}
-        image={curso.imagen}
+        alt={nombre}
+        image={imagen}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {curso.nombre}
+          {nombre}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          {curso.detalle}
+          {detalle}
         </Typography>
       </CardContent>
-      <CardActions>
-        <Container sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+      <CardActions sx={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
           <ItemCount stock={3} initial={1}/>
-          <Button size="small">Agregar al carrito</Button>
-        </Container>
+          <Button size="small">
+            <AddShoppingCartIcon sx={{ fontSize: 30}}/>
+          </Button>
       </CardActions>
     </Card>
   )

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
@@ -23,17 +22,15 @@ const ItemCount = ({stock, initial, onAdd}) => {
   };*/
 
   return (
-    <Container fixed>
-        <Box sx={{ display: 'inline-flex', justifyContent: 'space-between', alignItems: 'center'}}>
-            <IconButton aria-label="add" onClick={addCont}>
-                <AddIcon />
-            </IconButton>
-            <Typography px={2}>{contador}</Typography>
-            <IconButton aria-label="delete" onClick={remCont}>
-                <RemoveIcon />
-            </IconButton>
-        </Box>
-    </Container>
+    <Box sx={{ display: 'inline-flex', justifyContent: 'space-between', alignItems: 'center', paddingX:2.5, border: '1px solid grey' }}>
+        <IconButton aria-label="add" onClick={addCont}>
+            <AddIcon />
+        </IconButton>
+        <Typography px={1}>{contador}</Typography>
+        <IconButton aria-label="delete" onClick={remCont}>
+            <RemoveIcon />
+        </IconButton>
+    </Box>
   )
 }
 
