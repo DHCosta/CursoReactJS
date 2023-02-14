@@ -11,10 +11,10 @@ import { Box } from '@mui/system';
 
 const Item = ({curso}) => {
 
-  const {nombre, detalle, imagen} = curso
+  const {nombre, detalle, imagen, precio} = curso
 
   return (
-    <Card>
+    <Card sx={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>
       <CardMedia
         component="img"
         alt={nombre}
@@ -30,12 +30,12 @@ const Item = ({curso}) => {
       </CardContent>
       <CardActions sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
           <Typography variant="h6" color="#0080ff" pl={1}>
-              $3000
+              ${precio}
           </Typography> 
           <Box sx={{display: 'flex', justifyContent: 'space-around', alignItems: 'center'}}>
             <ItemCount stock={3} initial={1}/>
             <Button size="small">
-              <AddShoppingCartIcon sx={{ fontSize: 25, color: 'text.secondary'}}/>
+              <AddShoppingCartIcon sx={{ fontSize: 25, color: '#0080ff'}}/>
             </Button>
           </Box>
       </CardActions>

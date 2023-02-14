@@ -9,7 +9,7 @@ const ItemList = ({cursos}) => {
         {
             cursos.map((curso) => {
                 return (
-                  <Grid key={curso.nombre} item xs={4}>
+                  <Grid key={curso.nombre} item xs={4} sx={{ display: 'flex', alignItems: 'stretch'}}>
                     <Item curso={curso}/>
                   </Grid>
                 )                
