@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import { Typography, Grid } from '@mui/material'
 import ItemList from './ItemList';
+import { useParams } from 'react-router-dom';
 
 const ItemListContainer = ({greeting}) => {
 
     const [cursos, setCursos] = useState([]);
     const [error, setError] = useState(false);
+    const {name} = useParams();
+    const URL = name ? `http://localhost:3000/data/data.json/categorias/${name}` : `http://localhost:3000/data/data.json`; 
 
     const getCursos = async () => {
         try{
-            const res = await fetch('http://localhost:3000/data/data.json');
+            console.log(URL);
+            const res = await fetch(URL);
             const data = await res.json();
             setCursos(data);
         }

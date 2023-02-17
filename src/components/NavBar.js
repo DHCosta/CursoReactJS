@@ -8,8 +8,6 @@ import { Link } from 'react-router-dom';
 
 export default function NavBar(){
     
-    const navItems = ['Home', 'About', 'Contact'];
-
     return(
         <AppBar component="nav">
             <Toolbar sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between'}}>
@@ -19,7 +17,7 @@ export default function NavBar(){
                     </Typography>
                 </Link>
                 <Box sx={{display: 'flex', alignItems: 'center', mr: '1rem'}}>
-                    <NavBarMenu items={navItems}/>
+                    <NavBarMenu/>
                     <Link to={'/cart'}>
                         <CartWidget/>
                     </Link>
