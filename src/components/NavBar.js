@@ -11,7 +11,7 @@ export default function NavBar(){
     return(
         <AppBar component="nav">
             <Toolbar sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between'}}>
-                <Link to={'/'}>
+                <Link to='/'>
                     <Typography variant="h4">
                         NOESARTE
                     </Typography>

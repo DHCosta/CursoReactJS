@@ -8,14 +8,19 @@ const ItemListContainer = ({greeting}) => {
     const [cursos, setCursos] = useState([]);
     const [error, setError] = useState(false);
     const {name} = useParams();
-    const URL = name ? `http://localhost:3000/data/data.json/categorias/${name}` : `http://localhost:3000/data/data.json`; 
+    //const URL = name ? `http://localhost:3000/data/data.json/categorias/${name}` : `http://localhost:3000/data/data.json`; 
+    const URL = `http://localhost:3000/data/data.json`; 
+
+    function esLaCategoria(elemento){
+        return  elemento.categoria === name; 
+    }
 
     const getCursos = async () => {
         try{
-            console.log(URL);
             const res = await fetch(URL);
             const data = await res.json();
-            setCursos(data);
+            
+            name ? setCursos(data.filter(esLaCategoria)) : setCursos(data);
         }
         catch{
             setError(true);
@@ -24,7 +29,7 @@ const ItemListContainer = ({greeting}) => {
 
     useEffect(() => {
         getCursos();
-    }, []);
+    }, [name]);
     
 
     return (
@@ -35,7 +40,7 @@ const ItemListContainer = ({greeting}) => {
                 <>
                     {
                     cursos.length ? (
-                        <Grid container spacing={5} px={20} py={5}>
+                        <Grid container spacing={5} justifyContent={'center'} px={20} py={5} >
                             <ItemList cursos={cursos}/>   
                         </Grid>
                     ) : (

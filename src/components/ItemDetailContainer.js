@@ -7,7 +7,7 @@ const ItemDetailContainer = () => {
 
     const [item, setItem] = useState({});
     const [error, setError] = useState(false);
-    const {curso} = useParams();
+    const {id} = useParams();
     const URL = `http://localhost:3000/data/data.json`;
 
     const getItem = async () => {
@@ -15,7 +15,7 @@ const ItemDetailContainer = () => {
         //const res = await fetch('https://raw.githubusercontent.com/DHCosta/CursoReactJS/0bff2f1db61e11530bc761d0295d1600d6e2a7e5/src/data/data.json');
         const res = await fetch(URL);
         const data = await res.json();
-        setItem(data[0]);
+        setItem(data[id-1]);
       }
       catch{
           setError(true);
@@ -32,7 +32,7 @@ const ItemDetailContainer = () => {
           <>
               {
               item ? (
-                  <Grid container spacing={5} px={20} py={5}>
+                  <Grid container spacing={5} mt={15} px={20} py={5}>
                     <ItemDetail item={item}/>
                   </Grid>
               ) : (

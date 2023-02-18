@@ -5,9 +5,10 @@ import { NavLink } from 'react-router-dom';
 export default function NavBarMenu(){
 
     const navItems = [
-        { id: 1, name: "Anual", route:'/categorias/anual' },
-        { id: 2, name: "Mensual", route:'/categorias/mensual'},
-        { id: 3, name: "Verano", route:'/categorias/verano'}
+        { id: 1, name: "Todos", route:'/' },
+        { id: 2, name: "Anual", route:'/categorias/anual' },
+        { id: 3, name: "Mensual", route:'/categorias/mensual'},
+        { id: 4, name: "Verano", route:'/categorias/verano'}
       ];
 
     return (

@@ -20,7 +20,7 @@ function App() {
           />
 
           <Route
-            path="/product/:id"
+            path="/cursos/:id"
             element={<ItemDetailContainer />}
           />
 
