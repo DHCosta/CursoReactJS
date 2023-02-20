@@ -5,7 +5,7 @@
         "detalle": "Nos vamos de paseo por el mundo del arte y sus maravillas: desde las pirámides de Giza, hasta la escuela de la Bauhaus...", 
         "precio": 4000,
         "imagen": "http://localhost:3000/media/historiailus.png",
-        "categoria": "anual"
+        "categoria": "anuales"
     },
     {
         "id": 2, 
@@ -13,7 +13,7 @@
         "detalle": "Abordaremos el trabajo de artistas cuyas obras se inscriben en el marco de movimientos como el surrealismo, el barroco, el impresionismo, la abstracción...", 
         "precio": 3000,
         "imagen": "http://localhost:3000/media/historiadeunaart.png",
-        "categoria": "mensual"
+        "categoria": "mensuales"
     },
     {
         "id": 3, 
@@ -21,7 +21,7 @@
         "detalle": "Te propongo encuentros biográficos para conocer la obra y recorrer la vida de los grandes protagonistas de la historia del arte. Artistas que lograron transformaciones...", 
         "precio": 3000,
         "imagen": "http://localhost:3000/media/historiadeunartista.png",
-        "categoria": "mensual" 
+        "categoria": "mensuales" 
     },
     {
         "id": 4, 
@@ -37,7 +37,7 @@
         "detalle": "Cuando viajamos y tenemos la posibilidad de recorrer las ciudades más importantes del mundo, la simple idea de entrar a sus museos se vuelve un dilema...", 
         "precio": 5000,
         "imagen": "http://localhost:3000/media/unahoraenelmuseo.jpg",
-        "categoria": "anual"
+        "categoria": "anuales"
     },
     {
         "id": 6, 

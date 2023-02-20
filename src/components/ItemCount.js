@@ -4,6 +4,9 @@ import Typography from '@mui/material/Typography';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import Paper from '@mui/material/Paper';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import Button from '@mui/material/Button';
+
 
 const ItemCount = ({stock, initial, onAdd}) => {
 
@@ -17,12 +20,12 @@ const ItemCount = ({stock, initial, onAdd}) => {
     if (contador > 0) setContador(contador - 1);
   }
 
-  /*  const handlerSelect = () => {
-    if (stock > 0) onAdd(count);
-  };*/
+  const handlerSelect = () => {
+    if (stock > 0) onAdd(contador);
+  };
 
   return (
-    <Paper variant="outlined" square sx={{ display: 'inline-flex', justifyContent: 'space-between', alignItems: 'center', paddingX: 1.5 }}>
+    <Paper variant="outlined" square sx={{ display: 'inline-flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <IconButton aria-label="delete" onClick={remCont}>
           <RemoveIcon sx={{ fontSize: 18}}/>
       </IconButton>
@@ -30,6 +33,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
       <IconButton aria-label="add" onClick={addCont}>
           <AddIcon sx={{ fontSize: 18}}/>
       </IconButton>
+      <Button size="small" onClick={handlerSelect}>
+          <AddShoppingCartIcon sx={{ fontSize: 25, color: '#0080ff'}}/>
+      </Button>
     </Paper>
   )
 }

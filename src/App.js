@@ -12,11 +12,13 @@ function App() {
         <Routes>
           <Route path="/" 
             element={<ItemListContainer 
-            greeting={"Hola! Estos son los cursos disponibles de nuestro espacio"} />} />
+            greeting={"Estos son los cursos disponibles de nuestro espacio"} />} 
+          />
 
           <Route
-            path="/categorias/:name"
-            element={<ItemListContainer />}
+            path="/cursos/categorias/:name"
+            element={<ItemListContainer 
+            greeting={"Estos son los cursos disponibles"} />}
           />
 
           <Route

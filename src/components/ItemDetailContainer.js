@@ -5,14 +5,15 @@ import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
 
-    const [item, setItem] = useState({});
-    const [error, setError] = useState(false);
-    const {id} = useParams();
-    const URL = `http://localhost:3000/data/data.json`;
+  const [item, setItem] = useState({});
+  const [error, setError] = useState(false);
+  const {id} = useParams();
+  const URL = `http://localhost:3000/data/data.json`;
+
+  useEffect(() => {
 
     const getItem = async () => {
       try{
-        //const res = await fetch('https://raw.githubusercontent.com/DHCosta/CursoReactJS/0bff2f1db61e11530bc761d0295d1600d6e2a7e5/src/data/data.json');
         const res = await fetch(URL);
         const data = await res.json();
         setItem(data[id-1]);
@@ -21,10 +22,9 @@ const ItemDetailContainer = () => {
           setError(true);
       }    
     }
-    
-    useEffect(() => {
-      getItem();
-    }, []);
+
+    getItem();
+  }, []);
 
   return (
     <>

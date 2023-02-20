@@ -6,11 +6,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import ItemCount from './ItemCount';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import { Box, Container} from '@mui/system';
+import { Box} from '@mui/system';
 import { Link } from 'react-router-dom';
 
-const Item = ({curso}) => {
+const Item = ({curso, onAdd}) => {
 
   const {id, nombre, detalle, imagen, precio} = curso
 
@@ -30,19 +29,12 @@ const Item = ({curso}) => {
         </Typography>
       </CardContent>
       <CardActions sx={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        
         <Box sx={{width: '100%' , display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
           <Typography variant="h5" color="#0080ff" pl={1}>
               ${precio}
           </Typography> 
-          <Box sx={{display: 'flex', justifyContent: 'flex-end', padding:0}}>
-            <ItemCount stock={3} initial={1}/>
-            <Button size="small">
-              <AddShoppingCartIcon sx={{ fontSize: 25, color: '#0080ff'}}/>
-            </Button>
-          </Box>
+          <ItemCount stock={3} initial={1} onAdd={onAdd}/>
         </Box>
-
         <Box sx={{ paddingTop:3 }}>
           <Link to={`/cursos/${id}`}>
             <Button variant="contained" color="primary">
@@ -50,7 +42,6 @@ const Item = ({curso}) => {
             </Button>
           </Link>
         </Box>
-
       </CardActions>
     </Card>
   )
