@@ -9,12 +9,12 @@ const ItemListContainer = ({greeting}) => {
     const [error, setError] = useState(false);
     const {name} = useParams();
     //const URL = name ? `http://localhost:3000/data/data.json/categorias/${name}` : `http://localhost:3000/data/data.json`; 
-    const URL = `http://localhost:3000/data/data.json`; 
+    const URL = `/data/data.json`; 
 
     useEffect(() => {
 
         function esLaCategoria(elemento){
-            return  elemento.categoria === name; 
+            return  elemento.categoria === name;
         }
 
         const getCursos = async () => {

@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
   const [error, setError] = useState(false);
   const {id} = useParams();
-  const URL = `http://localhost:3000/data/data.json`;
+  const URL = `/data/data.json`;
 
   useEffect(() => {
 
