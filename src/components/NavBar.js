@@ -4,20 +4,23 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import CartWidget from './CartWidget';
 import NavBarMenu from './NavBarMenu';
+import { Link } from 'react-router-dom';
 
 export default function NavBar(){
-    //https://javascript.works-hub.com/learn/how-to-create-a-responsive-navbar-using-material-ui-and-react-router-f9a01
-    const navItems = ['Home', 'About', 'Contact'];
 
     return(
         <AppBar component="nav">
             <Toolbar sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between'}}>
-                <Typography variant="h4">
-                    NOESARTE
-                </Typography>
+                <Link to='/'>
+                    <Typography variant="h4">
+                        NOESARTE
+                    </Typography>
+                </Link>
                 <Box sx={{display: 'flex', alignItems: 'center', mr: '1rem'}}>
-                    <NavBarMenu items={navItems}/>
-                    <CartWidget/>
+                    <NavBarMenu/>
+                    <Link to={'/cart'}>
+                        <CartWidget/>
+                    </Link>
                 </Box>
             </Toolbar>
         </AppBar>
