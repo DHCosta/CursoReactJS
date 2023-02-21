@@ -7,7 +7,7 @@ import NavBarMenu from './NavBarMenu';
 import { Link } from 'react-router-dom';
 
 export default function NavBar(){
-    
+
     return(
         <AppBar component="nav">
             <Toolbar sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between'}}>
