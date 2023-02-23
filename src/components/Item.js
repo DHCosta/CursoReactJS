@@ -9,7 +9,7 @@ import ItemCount from './ItemCount';
 import { Box} from '@mui/system';
 import { Link } from 'react-router-dom';
 
-const Item = ({curso, onAdd}) => {
+const Item = ({curso}) => {
 
   const {id, nombre, detalle, imagen, precio} = curso
 
@@ -33,9 +33,6 @@ const Item = ({curso, onAdd}) => {
           <Typography variant="h5" color="#0080ff" pl={1}>
               ${precio}
           </Typography> 
-          <ItemCount stock={3} initial={1} onAdd={onAdd}/>
-        </Box>
-        <Box sx={{ paddingTop:3 }}>
           <Link to={`/cursos/${id}`}>
             <Button variant="contained" color="primary">
               Ver Detalles

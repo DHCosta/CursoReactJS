@@ -1,9 +1,9 @@
-import { padding } from '@mui/system'
+import { Typography } from '@mui/material'
 import React from 'react'
 
 const Cart = () => {
   return (
-    <div>Cart</div>
+    <Typography sx={{mt:20}}>CART PAGE</Typography>
   )
 }
 

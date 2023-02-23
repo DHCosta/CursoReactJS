@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react'
-import { Grid, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import CardMedia from '@mui/material/CardMedia';
-import Cart from './Cart';
+import EndBuy from './EndBuy';
 import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
 
 const ItemDetail = ({item}) => {
 
@@ -29,10 +30,14 @@ const ItemDetail = ({item}) => {
             <Typography variant='h4'>{nombre}</Typography>
             <Typography variant="h5" color="#0080ff" py={2}>${precio}</Typography>
             <Typography variant="body2" color="text.secondary">{detalle}</Typography>
-            {viewIC
-                ? <ItemCount stock={3} initial={1} onAdd={onAdd}/>
-                : <Cart />
-            }
+            <Box sx={{display:'flex', mt:3}}>
+                {viewIC
+                    ? <ItemCount stock={3} initial={1} onAdd={onAdd}/>
+                    : <Link to={'/cart'}>
+                        <EndBuy />
+                      </Link>
+                }
+            </Box>
         </Grid>
     </Grid>
   )
