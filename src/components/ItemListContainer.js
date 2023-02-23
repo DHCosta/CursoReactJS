@@ -32,9 +32,6 @@ const ItemListContainer = ({greeting}) => {
         getCursos();
     }, [name]);
     
-    const onAdd = (count) => {
-        console.log(`el usuario selecciono ${count} `);
-    };
 
     return (
         <>
@@ -45,7 +42,7 @@ const ItemListContainer = ({greeting}) => {
                     {
                     cursos.length ? (
                         <Grid container spacing={5} justifyContent={'center'} px={20} py={5} >
-                            <ItemList cursos={cursos} onAdd={onAdd}/>   
+                            <ItemList cursos={cursos}/>   
                         </Grid>
                     ) : (
                         <Typography>Cargando cursos...</Typography>    
