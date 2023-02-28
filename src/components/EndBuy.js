@@ -3,8 +3,8 @@ import React from 'react'
 
 const EndBuy = () => {
   return (
-    <Button variant="contained" disableElevation> Finalizar compra </Button>
+    <Button variant='contained' disableElevation> Finalizar compra </Button>
   )
 }
 
-export default  EndBuy
+export default EndBuy

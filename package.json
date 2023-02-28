@@ -24,6 +24,7 @@
   },
   "eslintConfig": {
     "extends": [
+      "./node_modules/standard/eslintrc.json",
       "react-app",
       "react-app/jest"
     ]
@@ -39,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "standard": "^17.0.0"
   }
 }

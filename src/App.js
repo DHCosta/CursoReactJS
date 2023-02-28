@@ -1,40 +1,40 @@
-import './App.css';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
-import Cart from './components/Cart';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './App.css'
+import NavBar from './components/NavBar'
+import ItemListContainer from './components/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer'
+import Cart from './components/Cart'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-function App() {
+function App () {
   return (
     <>
       <BrowserRouter>
-        <NavBar/>
+        <NavBar />
         <Routes>
-          <Route path="/" 
-            element={<ItemListContainer 
-            greeting={"Estos son los cursos disponibles de nuestro espacio"} />} 
+          <Route
+            path='/'
+            element={<ItemListContainer greeting='Estos son los cursos disponibles de nuestro espacio' />}
           />
 
           <Route
-            path="/cursos/categorias/:name"
-            element={<ItemListContainer 
-            greeting={"Estos son los cursos disponibles"} />}
+            path='/cursos/categorias/:name'
+            element={<ItemListContainer greeting='Estos son los cursos disponibles' />}
           />
 
           <Route
-            path="/cursos/:id"
+            path='/cursos/:id'
             element={<ItemDetailContainer />}
           />
 
-          <Route path="/cart" 
+          <Route
+            path='/cart'
             element={<Cart />}
           />
 
         </Routes>
       </BrowserRouter>
     </>
-  );
+  )
 }
 
-export default App;
+export default App
