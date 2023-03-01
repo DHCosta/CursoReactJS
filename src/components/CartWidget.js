@@ -5,10 +5,12 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
 import { CartContext } from './context/CartContext'
 
 export default function CartWidget () {
+  const { quantityC } = useContext(CartContext)
+
   return (
     <>
       <IconButton aria-label='cart'>
-        <Badge badgeContent={6} color='secondary'>
+        <Badge badgeContent={quantityC} color='secondary'>
           <ShoppingCartOutlinedIcon sx={{ color: 'white', fontSize: 25 }} />
         </Badge>
       </IconButton>

@@ -7,7 +7,7 @@ export const CartProvider = ({ children }) => {
   const [quantityC, setQuantityC] = useState(0)
 
   useEffect(() => {
-    setQuantityC(cart.reduce((a, b) => a?.quantity + b?.quantity, 0))
+    setQuantityC(cart.reduce((a, b) => a + b?.quantity, 0))
   }, [cart])
 
   function isInCart (id) {
