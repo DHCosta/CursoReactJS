@@ -1,6 +1,8 @@
+import { useContext, useEffect, useState } from 'react'
 import Badge from '@mui/material/Badge'
 import IconButton from '@mui/material/IconButton'
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined'
+import { CartContext } from './context/CartContext'
 
 export default function CartWidget () {
   return (

@@ -1,17 +1,20 @@
-
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Box, Grid, Typography } from '@mui/material'
 import CardMedia from '@mui/material/CardMedia'
 import EndBuy from './EndBuy'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom'
+import { CartContext } from './context/CartContext'
 
 const ItemDetail = ({ item }) => {
   const { detalle, imagen, precio, nombre } = item
   const [viewIC, setViewIC] = useState(true)
+
+  const { addItem } = useContext(CartContext)
+
   const onAdd = (count) => {
-    console.log(`el usuario selecciono ${count} `)
     setViewIC(false)
+    addItem(item, count)
   }
 
   return (
