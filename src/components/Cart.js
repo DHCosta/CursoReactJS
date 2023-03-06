@@ -1,4 +1,4 @@
-import { Box, Container, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import React, { useContext } from 'react'
 import { CartContext } from './context/CartContext'
 import List from '@mui/material/List'
@@ -24,8 +24,7 @@ const Cart = () => {
           ? cart.map((curso) => (
             <List key={`${curso.id}`}>
               <ListItem secondaryAction={
-                // eslint-disable-next-line no-restricted-globals
-                <IconButton edge='end' aria-label='delete' onClick={removeItem(event.target.id)}>
+                <IconButton edge='end' aria-label='delete' onClick={removeItem}>
                   <DeleteIcon />
                 </IconButton>
               }
