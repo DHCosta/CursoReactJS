@@ -24,7 +24,7 @@ const Cart = () => {
           ? cart.map((curso) => (
             <List key={`${curso.id}`}>
               <ListItem secondaryAction={
-                <IconButton edge='end' aria-label='delete' onClick={removeItem}>
+                <IconButton edge='end' aria-label='delete' onClick={() => removeItem(curso.id)}>
                   <DeleteIcon />
                 </IconButton>
               }

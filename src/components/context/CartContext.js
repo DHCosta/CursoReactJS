@@ -32,8 +32,7 @@ export const CartProvider = ({ children }) => {
   }
 
   function removeItem (itemId) {
-    console.log(itemId)
-    setCart(cart.filter(curso => curso.id !== itemId))
+    setCart([...cart].filter(curso => curso.id !== itemId))
   }
 
   function clear () {
