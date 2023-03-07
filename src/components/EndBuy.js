@@ -3,7 +3,7 @@ import React from 'react'
 
 const EndBuy = () => {
   return (
-    <Button variant='contained' disableElevation> Finalizar compra </Button>
+    <Button variant='contained' disableElevation> Terminar mi compra </Button>
   )
 }
 
