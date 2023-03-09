@@ -9,7 +9,7 @@ import { Box } from '@mui/system'
 import { Link } from 'react-router-dom'
 
 const Item = ({ curso }) => {
-  const { id, nombre, detalle, imagen, precio } = curso
+  const { id, nombre, detalleAb, imagen, precio } = curso
 
   return (
     <Card sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
@@ -23,7 +23,7 @@ const Item = ({ curso }) => {
           {nombre}
         </Typography>
         <Typography variant='body2' color='text.secondary'>
-          {detalle}
+          {detalleAb}
         </Typography>
       </CardContent>
       <CardActions sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

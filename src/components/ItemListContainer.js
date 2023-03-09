@@ -2,16 +2,39 @@ import React, { useState, useEffect } from 'react'
 import { Typography, Grid } from '@mui/material'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
+import { db } from './../firebase/firebase'
+import { getDocs, collection, query, where } from 'firebase/firestore'
 
 const ItemListContainer = ({ greeting }) => {
   const [cursos, setCursos] = useState([])
   const [error, setError] = useState(false)
   const { name } = useParams()
   // const URL = name ? `http://localhost:3000/data/data.json/categorias/${name}` : `http://localhost:3000/data/data.json`;
-  const URL = '/data/data.json'
+  // const URL = '/data/data.json'
 
   useEffect(() => {
+    const cursosCollection = collection(db, 'cursos')
+    const consulta = query(cursosCollection)
+
     function esLaCategoria (elemento) {
+      return elemento.categoria === name
+    }
+
+    getDocs(consulta).then(
+      (data) => {
+        const list = data.docs.map(cursos => {
+          return {
+            ...cursos.data(),
+            id: cursos.id
+          }
+        })
+        name ? setCursos(list.filter(esLaCategoria)) : setCursos(list)
+      }
+    )
+      .catch(() => { setError(true) })
+
+    // Comento la invocacion con fetch
+    /* function esLaCategoria (elemento) {
       return elemento.categoria === name
     }
 
@@ -26,7 +49,7 @@ const ItemListContainer = ({ greeting }) => {
       }
     }
 
-    getCursos()
+    getCursos() */
   }, [name])
 
   return (
