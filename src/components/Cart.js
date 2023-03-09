@@ -56,7 +56,7 @@ const Cart = () => {
       </Box>
       {cart.length
         ? (
-          <Paper sx={{ maxWidth: 'sm', elevation: 3, display: 'flex', justifyContent: 'flex-end', bgcolor: '#7986cb', color: 'white', ml: 25, py: 3 }}>
+          <Paper sx={{ maxWidth: 'sm', elevation: 3, display: 'flex', justifyContent: 'flex-end', bgcolor: '#7986cb', color: 'white', ml: 25, py: 3, mb: 10 }}>
             <Typography variant='h6' sx={{ pr: 5 }}>TOTAL ${calTotal()}</Typography>
           </Paper>
           )
