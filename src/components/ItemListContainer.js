@@ -3,7 +3,7 @@ import { Typography, Grid } from '@mui/material'
 import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
 import { db } from './../firebase/firebase'
-import { getDocs, collection, query, where } from 'firebase/firestore'
+import { getDocs, collection, query } from 'firebase/firestore'
 
 const ItemListContainer = ({ greeting }) => {
   const [cursos, setCursos] = useState([])

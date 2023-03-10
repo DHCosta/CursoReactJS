@@ -7,16 +7,19 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import { Box } from '@mui/system'
 import { Link } from 'react-router-dom'
+import { storage } from './../firebase/firebase'
+import { ref } from 'firebase/storage'
 
 const Item = ({ curso }) => {
   const { id, nombre, detalleAb, imagen, precio } = curso
+  const pathReference = ref(storage)
 
   return (
     <Card sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
       <CardMedia
         component='img'
         alt={nombre}
-        image={imagen}
+        image={'https://firebasestorage.googleapis.com/v0/b/' + pathReference.bucket + '/o/' + imagen + '?alt=media&token=dcdca079-6cd1-479f-ae8e-11e6e1af5275'}
       />
       <CardContent>
         <Typography gutterBottom variant='h5' component='div'>

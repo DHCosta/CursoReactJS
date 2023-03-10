@@ -5,12 +5,16 @@ import EndBuy from './EndBuy'
 import ItemCount from './ItemCount'
 import { Link } from 'react-router-dom'
 import { CartContext } from './context/CartContext'
+import { storage } from './../firebase/firebase'
+import { ref } from 'firebase/storage'
 
 const ItemDetail = ({ item }) => {
   const { detalle, imagen, precio, nombre } = item
   const [viewIC, setViewIC] = useState(true)
 
   const { addItem } = useContext(CartContext)
+
+  const pathReference = ref(storage)
 
   const onAdd = (count) => {
     setViewIC(false)
@@ -23,7 +27,7 @@ const ItemDetail = ({ item }) => {
         <CardMedia
           component='img'
           alt={nombre}
-          image={imagen}
+          image={'https://firebasestorage.googleapis.com/v0/b/' + pathReference.bucket + '/o/' + imagen + '?alt=media&token=dcdca079-6cd1-479f-ae8e-11e6e1af5275'}
         />
       </Grid>
       <Grid item xs={6}>
