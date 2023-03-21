@@ -9,8 +9,6 @@ const ItemListContainer = ({ greeting }) => {
   const [cursos, setCursos] = useState([])
   const [error, setError] = useState(false)
   const { name } = useParams()
-  // const URL = name ? `http://localhost:3000/data/data.json/categorias/${name}` : `http://localhost:3000/data/data.json`;
-  // const URL = '/data/data.json'
 
   useEffect(() => {
     const cursosCollection = collection(db, 'cursos')
@@ -32,24 +30,6 @@ const ItemListContainer = ({ greeting }) => {
       }
     )
       .catch(() => { setError(true) })
-
-    // Comento la invocacion con fetch
-    /* function esLaCategoria (elemento) {
-      return elemento.categoria === name
-    }
-
-    const getCursos = async () => {
-      try {
-        const res = await fetch(URL)
-        const data = await res.json()
-
-        name ? setCursos(data.filter(esLaCategoria)) : setCursos(data)
-      } catch {
-        setError(true)
-      }
-    }
-
-    getCursos() */
   }, [name])
 
   return (

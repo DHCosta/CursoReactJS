@@ -9,7 +9,6 @@ const ItemDetailContainer = () => {
   const [item, setItem] = useState({})
   const [error, setError] = useState(false)
   const { id } = useParams()
-  // const URL = '/data/data.json'
 
   useEffect(() => {
     const cursosCollection = collection(db, 'cursos')
@@ -27,17 +26,6 @@ const ItemDetailContainer = () => {
         setError(true)
       }
     }
-
-    /* const getItem = async () => {
-      try {
-        const res = await fetch(URL)
-        const data = await res.json()
-        setItem(data[id - 1])
-      } catch {
-        setError(true)
-      }
-    } */
-
     getItem()
   }, [])
 
