@@ -7,6 +7,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemText from '@mui/material/ListItemText'
 import IconButton from '@mui/material/IconButton'
 import DeleteIcon from '@mui/icons-material/Delete'
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
 import Divider from '@mui/material/Divider'
 import Paper from '@mui/material/Paper'
 import { Link } from 'react-router-dom'
@@ -23,7 +24,9 @@ const Cart = () => {
       {!cart.length ||
           (
             <Box sx={{ maxWidth: 'sm', display: 'flex', justifyContent: 'flex-end', mt: 15, ml: 25, py: 2 }}>
-              <Button variant='contained' onClick={clear}>Vaciar</Button>
+              <Button variant='outlined' onClick={clear} startIcon={<DeleteIcon />}>
+                Vaciar
+              </Button>
             </Box>
           )}
       <Box sx={{ maxWidth: 'sm', boxShadow: 1 }} pt={3} ml={25}>
@@ -56,9 +59,18 @@ const Cart = () => {
       </Box>
       {cart.length
         ? (
-          <Paper sx={{ maxWidth: 'sm', elevation: 3, display: 'flex', justifyContent: 'flex-end', bgcolor: '#7986cb', color: 'white', ml: 25, py: 3, mb: 10 }}>
-            <Typography variant='h6' sx={{ pr: 5 }}>TOTAL ${calTotal()}</Typography>
-          </Paper>
+          <>
+            <Paper sx={{ maxWidth: 'sm', elevation: 3, display: 'flex', justifyContent: 'flex-end', bgcolor: '#7986cb', color: 'white', ml: 25, py: 3 }}>
+              <Typography variant='h6' sx={{ pr: 5 }}>TOTAL ${calTotal()}</Typography>
+            </Paper>
+            <Box sx={{ maxWidth: 'sm', display: 'flex', justifyContent: 'flex-end', ml: 25, mt: 2, mb: 10 }}>
+              <Link to='/form'>
+                <Button variant='contained' endIcon={<ArrowRightAltIcon />}>
+                  Finalizar inscripción
+                </Button>
+              </Link>
+            </Box>
+          </>
           )
         : (
           <Container sx={{ display: 'flex', flexDirection: 'column', mt: 15 }}>

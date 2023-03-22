@@ -5,6 +5,7 @@ import ItemDetailContainer from './components/ItemDetailContainer'
 import Cart from './components/Cart'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { CartProvider } from './components/context/CartContext'
+import FormBuy from './components/FormBuy'
 
 function App () {
   return (
@@ -31,6 +32,11 @@ function App () {
             <Route
               path='/cart'
               element={<Cart />}
+            />
+
+            <Route
+              path='/form'
+              element={<FormBuy />}
             />
 
           </Routes>
