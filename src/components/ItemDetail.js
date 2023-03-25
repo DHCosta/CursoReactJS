@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 import { CartContext } from './context/CartContext'
 
 const ItemDetail = ({ item }) => {
-  const { detalle, imagen, precio, nombre } = item
+  const { detalle, imagen, precio, nombre, cupo } = item
   const [viewIC, setViewIC] = useState(true)
 
   const { addItem } = useContext(CartContext)
@@ -32,7 +32,7 @@ const ItemDetail = ({ item }) => {
         <Typography variant='body2' color='text.secondary'>{detalle}</Typography>
         <Box sx={{ display: 'flex', mt: 3 }}>
           {viewIC
-            ? <ItemCount stock={3} initial={1} onAdd={onAdd} />
+            ? <ItemCount stock={cupo} initial={1} onAdd={onAdd} />
             : <Link to='/cart'> <EndBuy /> </Link>}
         </Box>
       </Grid>
