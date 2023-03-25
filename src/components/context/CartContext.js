@@ -16,8 +16,6 @@ export const CartProvider = ({ children }) => {
 
   function addItem (item, qty) {
     if (isInCart(item.id)) {
-      // --> entiendo que no puedo hacer lo siguiente pq estoy modificando el estado sin usar el setter
-      // cart.forEach(curso => curso.id === item.id && (curso.quantity = (curso.quantity + qty)))
       const itemCarrito = cart.find(curso => curso.id === item.id)
       itemCarrito.quantity += qty
 
@@ -28,7 +26,6 @@ export const CartProvider = ({ children }) => {
       const quantity = qty
       setCart([...cart, { ...item, quantity }])
     }
-    // setQuantity(quantity + qty)
   }
 
   function removeItem (itemId) {
