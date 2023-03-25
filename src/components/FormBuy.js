@@ -7,7 +7,7 @@ import { CartContext } from './context/CartContext'
 import CustomAlert from './CustomAlert'
 
 const FormBuy = () => {
-  const { cart, quantityC } = useContext(CartContext)
+  const { cart, quantityC, total } = useContext(CartContext)
   const [idCompra, setIdCompra] = useState('')
 
   const [error, setError] = useState('')
@@ -124,7 +124,7 @@ const FormBuy = () => {
         {
           alumno,
           items: cart,
-          total: quantityC,
+          total,
           time: serverTimestamp()
         }
       )

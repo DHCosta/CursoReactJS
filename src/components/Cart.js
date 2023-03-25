@@ -13,11 +13,7 @@ import Paper from '@mui/material/Paper'
 import { Link } from 'react-router-dom'
 
 const Cart = () => {
-  const { cart, removeItem, clear } = useContext(CartContext)
-
-  function calTotal () {
-    return cart.reduce((a, b) => a + (b.precio * b.quantity), 0)
-  }
+  const { cart, removeItem, clear, total } = useContext(CartContext)
 
   return (
     <>
@@ -61,7 +57,7 @@ const Cart = () => {
         ? (
           <>
             <Paper sx={{ maxWidth: 'sm', elevation: 3, display: 'flex', justifyContent: 'flex-end', bgcolor: '#7986cb', color: 'white', ml: 25, py: 3 }}>
-              <Typography variant='h6' sx={{ pr: 5 }}>TOTAL ${calTotal()}</Typography>
+              <Typography variant='h6' sx={{ pr: 5 }}>TOTAL ${total}</Typography>
             </Paper>
             <Box sx={{ maxWidth: 'sm', display: 'flex', justifyContent: 'flex-end', ml: 25, mt: 2, mb: 10 }}>
               <Link to='/form'>
